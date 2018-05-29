@@ -110,7 +110,7 @@
 
   ![](https://picabstract-preview-ftn.weiyun.com:8443/ftn_pic_abs_v2/0684e4e7b68cbdac7d7ec47659f7fe3ab5c3c2b07b269e0ff355c6066ae18af11af9a87296aedc2ef8f18782b385b5dc?pictype=scale&from=30113&version=2.0.0.2&uin=519362600&fname=tidb_read_committed.png&size=1024)
 
-###4.3.repeatable read
+### 4.3.repeatable read
 
 * 重复读，就是在开始读取数据（事务开启）时，不再允许修改操作 。
 * 重复读可以解决不可重复读问题。不可重复读对应的是修改，即UPDATE操作。但是可能还会有幻读问题。因为幻读问题对应的是插入INSERT操作，而不是UPDATE操作。 
@@ -178,7 +178,7 @@
 
 
 
-###4.4Serializable
+### 4.4Serializable
 
 * 串性化是隔离最严格的一种形式，要求有读写冲突的事务必须严格串行执行。如下图所示，2号事务要读取1号事务修改的记录A，这就导致2号事务必须等待1号事务提交之后才能开启执行。通过这种形式可以避免之前所提到脏读、不可重复读和幻读。虽说如此，几乎所有数据库业务都不会开启这种隔离级别，因为这会带来严重的锁冲突。
 
