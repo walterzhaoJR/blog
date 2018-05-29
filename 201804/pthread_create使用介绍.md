@@ -1,6 +1,6 @@
-#0.背景介绍
+# 0.背景介绍
 * 今天在工作中要使用pthread_create函数开启一个线程，并且需要传递参数，其中遇到了一些问题，现在来总结一下。
-#1.pthread_create介绍
+# 1.pthread_create介绍
 * 函数原型：
 ```linux
 int pthread_create(pthread_t *tidp,const pthread_attr_t *attr, (void*)(*start_rtn)(void*),void *arg);
@@ -16,8 +16,8 @@ int pthread_create(pthread_t *tidp,const pthread_attr_t *attr, (void*)(*start_rt
 * pthread_create的返回值表征进程是否创建成功。其中0：成功，-1：失败。
 * 编译的时候，需要添加编译条件 -pthread。例如：g++ pthread_test.cpp -o pthread_test -pthread
 
-#2.pthread_create开启线程，传递参数的几种情况
-##2.1不传递参数
+# 2.pthread_create开启线程，传递参数的几种情况
+## 2.1不传递参数
 ```linux
 #include <iostream>
 #include <pthread.h>
@@ -50,7 +50,7 @@ int main()
 }
 ```
 
-##2.2 传递一个简单类型
+## 2.2 传递一个简单类型
 ```linux
 #include <iostream>
 #include <pthread.h>
@@ -86,7 +86,7 @@ int main()
 	return 0;
 }
 ```
-##2.3传递一个结构体对象
+## 2.3传递一个结构体对象
 ```linux
 #include <iostream>
 #include <pthread.h>
@@ -132,7 +132,7 @@ int main()
 	return 0;
 }
 ```
-##2.4传递一个类对象
+## 2.4传递一个类对象
 ```linux
 #include <iostream>
 #include <pthread.h>
